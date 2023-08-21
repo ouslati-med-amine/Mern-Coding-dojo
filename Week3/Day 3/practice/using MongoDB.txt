@@ -1,0 +1,414 @@
+> use my-first-db
+switched to db my-first-db
+> db.createCollection("students")
+{ db.students.insert({name:"mohamed",home_state:"California",luky_number:4,birth
+day:{month:11,day:25,year:2006}}) d",home_state:"California",luky_number:4,bir})
+WriteResult({ "nInserted" : 1 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("64e0bc549d14dc0455d1be1d"),
+        "name" : "mohamed",
+        "home_state" : "California",
+        "luky_number" : 4,
+        "birthday" : {
+                "month" : 11,
+                "day" : 25,
+                "year" : 2006
+        }
+} db.students.insert({name:"slim",home_state:"Washington",luky_number:11,birthda
+y:{month:4,day:15,year:2000}})im",home_state:"Washington",luky_number:11,birth})
+Wrdb.students.insert({name:"yassin",home_state:"California",luky_number:3,birthd
+ay:{month:3,day:22,year:2009}})sin",home_state:"California",luky_number:3,birt})
+Wrdb.student.insert({name:"nadia",home_state:"California",luky_number:9,birthday
+:{month:6,day:14,year:2001}})dia",home_state:"California",luky_number:9,birthd})
+WriteResult({ "nInserted" : 1 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("64e0bc549d14dc0455d1be1d"),
+        "name" : "mohamed",
+        "home_state" : "California",
+        "luky_number" : 4,
+        "birthday" : {
+                "month" : 11,
+                "day" : 25,
+                "year" : 2006
+        }
+}
+{
+        "_id" : ObjectId("64e0bdbe9d14dc0455d1be1e"),
+        "name" : "slim",
+        "home_state" : "Washington",
+        "luky_number" : 11,
+        "birthday" : {
+                "month" : 4,
+                "day" : 15,
+                "year" : 2000
+        }
+}
+{
+        "_id" : ObjectId("64e0beb89d14dc0455d1be1f"),
+        "name" : "yassin",
+        "home_state" : "California",
+        "luky_number" : 3,
+        "birthday" : {
+                "month" : 3,
+                "day" : 22,
+                "year" : 2009
+        }
+} db.students.insert({name:"nadia",home_state:"California",luky_number:6,birthda
+y:{month:1,day:27,year:2000}})dia",home_state:"California",luky_number:6,birth})
+Wrdb.students.insert({name:"rahim",home_state:"Washington",luky_number:12,birthd
+ay:{month:7,day:3,year:2002}})him",home_state:"Washington",luky_number:12,birt})
+WriteResult({ "nInserted" : 1 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("64e0bc549d14dc0455d1be1d"),
+        "name" : "mohamed",
+        "home_state" : "California",
+        "luky_number" : 4,
+        "birthday" : {
+                "month" : 11,
+                "day" : 25,
+                "year" : 2006
+        }
+}
+{
+        "_id" : ObjectId("64e0bdbe9d14dc0455d1be1e"),
+        "name" : "slim",
+        "home_state" : "Washington",
+        "luky_number" : 11,
+        "birthday" : {
+                "month" : 4,
+                "day" : 15,
+                "year" : 2000
+        }
+}
+{
+        "_id" : ObjectId("64e0beb89d14dc0455d1be1f"),
+        "name" : "yassin",
+        "home_state" : "California",
+        "luky_number" : 3,
+        "birthday" : {
+                "month" : 3,
+                "day" : 22,
+                "year" : 2009
+        }
+}
+{
+        "_id" : ObjectId("64e0c0f69d14dc0455d1be21"),
+        "name" : "nadia",
+        "home_state" : "California",
+        "luky_number" : 6,
+        "birthday" : {
+                "month" : 1,
+                "day" : 27,
+                "year" : 2000
+        }
+}
+{
+        "_id" : ObjectId("64e0c1e39d14dc0455d1be22"),
+        "name" : "rahim",
+        "home_state" : "Washington",
+        "luky_number" : 12,
+        "birthday" : {
+                "month" : 7,
+                "day" : 3,
+                "year" : 2002
+        }
+}
+> db.students.find({home_state:"California"}).pretty()
+{
+        "_id" : ObjectId("64e0bc549d14dc0455d1be1d"),
+        "name" : "mohamed",
+        "home_state" : "California",
+        "luky_number" : 4,
+        "birthday" : {
+                "month" : 11,
+                "day" : 25,
+                "year" : 2006
+        }
+}
+{
+        "_id" : ObjectId("64e0beb89d14dc0455d1be1f"),
+        "name" : "yassin",
+        "home_state" : "California",
+        "luky_number" : 3,
+        "birthday" : {
+                "month" : 3,
+                "day" : 22,
+                "year" : 2009
+        }
+}
+{
+        "_id" : ObjectId("64e0c0f69d14dc0455d1be21"),
+        "name" : "nadia",
+        "home_state" : "California",
+        "luky_number" : 6,
+        "birthday" : {
+                "month" : 1,
+                "day" : 27,
+                "year" : 2000
+        }
+}
+> db.students.find({luky_number:{$gt:3}})
+{ "_id" : ObjectId("64e0bc549d14dc0455d1be1d"), "name" : "mohamed", "home_state"
+ : "California", "luky_number" : 4, "birthday" : { "month" : 11, "day" : 25, "ye
+ar" : 2006 } }
+{ "_id" : ObjectId("64e0bdbe9d14dc0455d1be1e"), "name" : "slim", "home_state" :
+"Washington", "luky_number" : 11, "birthday" : { "month" : 4, "day" : 15, "year"
+ : 2000 } }
+{ "_id" : ObjectId("64e0c0f69d14dc0455d1be21"), "name" : "nadia", "home_state" :
+ "California", "luky_number" : 6, "birthday" : { "month" : 1, "day" : 27, "year"
+ : 2000 } }
+{ "_id" : ObjectId("64e0c1e39d14dc0455d1be22"), "name" : "rahim", "home_state" :
+ "Washington", "luky_number" : 12, "birthday" : { "month" : 7, "day" : 3, "year"
+ : 2002 } }
+> db.students.find(luky_number:{$ite:10})
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:28
+> db.students.find({luky_number:{$Ite:10}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $Ite",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.students.find({luky_number:{$Ite:10}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $Ite",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.students.find({luky_number:{$ite:10}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $ite",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.students.find({luky_number:{$lte:10}}).pretty()
+{
+        "_id" : ObjectId("64e0bc549d14dc0455d1be1d"),
+        "name" : "mohamed",
+        "home_state" : "California",
+        "luky_number" : 4,
+        "birthday" : {
+                "month" : 11,
+                "day" : 25,
+                "year" : 2006
+        }
+}
+{
+        "_id" : ObjectId("64e0beb89d14dc0455d1be1f"),
+        "name" : "yassin",
+        "home_state" : "California",
+        "luky_number" : 3,
+        "birthday" : {
+                "month" : 3,
+                "day" : 22,
+                "year" : 2009
+        }
+}
+{
+        "_id" : ObjectId("64e0c0f69d14dc0455d1be21"),
+        "name" : "nadia",
+        "home_state" : "California",
+        "luky_number" : 6,
+        "birthday" : {
+                "month" : 1,
+                "day" : 27,
+                "year" : 2000
+        }
+}
+> db.students.find({luky_number:{$in[1.9]}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:34
+> db.students.find({luky_number:{$in:1,9}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:38
+> db.students.update({},{$set{interests:["coding","brunch","MongoDB"]}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:27
+> db.students.opdate({},{$set:{interests:["coding","brunch","MongoDB"]}})
+uncaught exception: TypeError: db.students.opdate is not a function :
+@(db.students.update({},{$set:{interests:["coding","brunch","MongoDB"]}},{multi:
+true})tudents.update({},{$set:{interests:["coding","brunch","MongoDB"]}},{mult})
+WriteResult({ "nMatched" : 5, "nUpserted" : 0, "nModified" : 5 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("64e0bc549d14dc0455d1be1d"),
+        "name" : "mohamed",
+        "home_state" : "California",
+        "luky_number" : 4,
+        "birthday" : {
+                "month" : 11,
+                "day" : 25,
+                "year" : 2006
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("64e0bdbe9d14dc0455d1be1e"),
+        "name" : "slim",
+        "home_state" : "Washington",
+        "luky_number" : 11,
+        "birthday" : {
+                "month" : 4,
+                "day" : 15,
+                "year" : 2000
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("64e0beb89d14dc0455d1be1f"),
+        "name" : "yassin",
+        "home_state" : "California",
+        "luky_number" : 3,
+        "birthday" : {
+                "month" : 3,
+                "day" : 22,
+                "year" : 2009
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("64e0c0f69d14dc0455d1be21"),
+        "name" : "nadia",
+        "home_state" : "California",
+        "luky_number" : 6,
+        "birthday" : {
+                "month" : 1,
+                "day" : 27,
+                "year" : 2000
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("64e0c1e39d14dc0455d1be22"),
+        "name" : "rahim",
+        "home_state" : "Washington",
+        "luky_number" : 12,
+        "birthday" : {
+                "month" : 7,
+                "day" : 3,
+                "year" : 2002
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+> db.students.find({luky_number:{$in:[1,2,3,4,5,6,7,8,9]}}).pretty()
+{
+        "_id" : ObjectId("64e0bc549d14dc0455d1be1d"),
+        "name" : "mohamed",
+        "home_state" : "California",
+        "luky_number" : 4,
+        "birthday" : {
+                "month" : 11,
+                "day" : 25,
+                "year" : 2006
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("64e0beb89d14dc0455d1be1f"),
+        "name" : "yassin",
+        "home_state" : "California",
+        "luky_number" : 3,
+        "birthday" : {
+                "month" : 3,
+                "day" : 22,
+                "year" : 2009
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("64e0c0f69d14dc0455d1be21"),
+        "name" : "nadia",
+        "home_state" : "California",
+        "luky_number" : 6,
+        "birthday" : {
+                "month" : 1,
+                "day" : 27,
+                "year" : 2000
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+> db.students.update({name:"mohamed"},{$push:{interests:football}})
+uncaught exception: ReferenceError: football is not defined :
+@(shell):1:45
+> db.students.update({name:"mohamed"},{$push:{interests:"football"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({name:"nadia"},{$push:{interests:"taxes"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({name:"nadia"},{$pull:{interests:"taxes"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.remove({home_state:"California"})
+WriteResult({ "nRemoved" : 3 })
+> db.students.remove({name:"mohamed"})
+WriteResult({ "nRemoved" : 0 })
+> db.students.remove({name:"mohamed"})
+WriteResult({ "nRemoved" : 0 })
+> db.students.remove({luky_number:{$gt:5}},true)
+Wrdb.students.update({},{$set:{interests:["coding","brunch","MongoDB"]}},{multi:
+... db                                                                 },{multi:
+...
+...
+>
+> db.students.update({},{$set:{number_of_belt:0}},{multi:true})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({home_state:"Washington"},{$set:{number_of_belt:1}})
+Wrdb.students.update({number_of_belt:1},{$rename:{"number_of_belt":"belts_earned
+"}}).students.update({number_of_belt:1},{$rename:{"number_of_belt":"belts_ea"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.remove({$unset:{luky_number}})
+uncaught exception: ReferenceError: luky_number is not defined :
+@(shell):1:29
+>  db.students.remove({$unset:{"luky_number"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:41
+>  db.students.remove({$unset:{"luky_number":12}})
+WriteResult({
+        "nRemoved" : 0,
+        "writeError" : {
+                "code" : 2,
+                "errmsg" : "unknown top level operator: $unset. If you have a fi
+eld name that starts with a '$' symbol, consider using $getField or $setField."
+        }
+})
+>  db.students.remove({luky_number:12})
+WriteResult({ "nRemoved" : 1 })
+>  db.students.update({},{$set:{updated_on:"19/08/2023"}},{multi:true})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+>
