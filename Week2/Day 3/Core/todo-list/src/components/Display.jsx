@@ -1,19 +1,25 @@
 import React from 'react'
 
 const Display = (props) => {
-    const submit =(e)=>{
-        e.preventDefault()
-    }
+    const{msg,setMessage}=props
+
+const delite = (inx)=>{
+    const filterMsg = msg.filter((one,index)=>{
+        return inx !== index;
+
+    })
+    setMessage(filterMsg)
+}
 return (
     <div>
         {
-            props.msg.map((one,index)=>{
+            msg.map((one,index)=>{
                 return(
                     <div key={index}>
-                        <form onSubmit={submit}>
+                        <form >
                         <p>{one}</p>
                         <input type="checkbox" />
-                        <button>delete</button>
+                        <button onClick={(e)=>{delite(index)}}>delete</button>
                         </form>
                     </div>
                 )
