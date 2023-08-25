@@ -5,14 +5,9 @@ const JokesSchema = new mongoose.Schema({
         type: String
     },
     punchline: {
-        type: Number
+        type: String
     },
-    createdAt: {
-        type: Number
-    },
-    updatedAt: {
-        type: Number
-    }
+
 });
 
 module.exports = mongoose.model('Jokes', JokesSchema);
